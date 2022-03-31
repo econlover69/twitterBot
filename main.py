@@ -100,10 +100,10 @@ def generate_reply_text():
 send_tweet('system deployed')
 already_tweeted = False
 while True:
-    if(time.strftime("%H") == "12" and not already_tweeted):
+    if((time.strftime("%H") == "7" or time.strftime("%H") == "16" or time.strftime("%H") == "12") and not already_tweeted):
         send_tweet(tweet_contents.readline() + " @JosephPWood")
         already_tweeted = True
-    if(already_tweeted and time.strftime("%H") != "12"):
+    if(already_tweeted and time.strftime("%H") != "12" and time.strftime("%H") != "7" and time.strftime("%H") == "16"):
         already_tweeted = False
     time.sleep(60)
     
